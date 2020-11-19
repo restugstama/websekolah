@@ -8,6 +8,11 @@ class Model_siswa extends CI_Model
 		return $this->db->get('siswa')->result_array();
 	}
 
+	public function getby_id($where)
+	{
+		return $this->db->get_where('siswa', $where)->result_array();
+	}
+
 	public function savedata($data)
 	{
 		$this->db->insert('siswa', $data);
@@ -19,8 +24,9 @@ class Model_siswa extends CI_Model
 		$this->db->delete('siswa');
 	}
 
-	public function getby_id($where)
+	public function updatedata($where,$data)
 	{
-		return $this->db->get_where('siswa', $where)->result_array();
+		$this->db->where($where);
+		$this->db->update('siswa', $data);
 	}
 }
