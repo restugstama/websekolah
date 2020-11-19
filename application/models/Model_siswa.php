@@ -5,7 +5,7 @@ class Model_siswa extends CI_Model
 {
 	public function getalldata()
 	{
-		return $this->db->get('siswa');
+		return $this->db->get('siswa')->result_array();
 	}
 
 	public function savedata($data)
@@ -17,5 +17,10 @@ class Model_siswa extends CI_Model
 	{
 		$this->db->where($where);
 		$this->db->delete('siswa');
+	}
+
+	public function getby_id($where)
+	{
+		return $this->db->get_where('siswa', $where)->result_array();
 	}
 }

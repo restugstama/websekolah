@@ -23,18 +23,15 @@
           <?php
           $no = 1;
           foreach ($datasiswa as $siswa ) : 
-          	$nama = $siswa->nama;
-          	$nisn = $siswa->nisn;
-          	$id   = $siswa->id_siswa;
           	?>
-            <tr id="<?= $siswa->id_siswa ?>">
+            <tr>
               <td><?= $no++ ?></td>
-              <td><?= $nama; ?></td>
-              <td><?= $nisn ?></td>
+              <td><?= $siswa['nama']; ?></td>
+              <td><?= $siswa['nisn']; ?></td>
               <td></td>
               <td>
-                <?= anchor('admin/siswa/editsiswa/'.$siswa->id_siswa, '<div class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></div>') ?>
-                <?= anchor('admin/siswa/hapussiswa/'.$siswa->id_siswa, '<div class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></div>') ?>
+                <a href="<?= base_url(); ?>admin/siswa/editsiswa/<?= $siswa['id_siswa']; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>
+                <a href="<?= base_url(); ?>admin/siswa/hapussiswa/<?= $siswa['id_siswa']; ?>" class="btn btn-danger btn-xs remove"><i class="fa fa-trash"></i></a>
               </td>
             </tr>
           <?php endforeach; ?>
@@ -45,4 +42,4 @@
 </section>
 <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
+<!-- /.content-wrapper

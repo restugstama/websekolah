@@ -34,6 +34,8 @@
           <li><a href="#">Guru</a></li>
         </ul>
       </li>
+      <li><a href="#"><i class="fa fa-link"></i> <span>Management User</span></a></li>
+      <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

@@ -11,7 +11,7 @@ class Siswa extends CI_Controller {
 	public function index()
 	{
 		$data['title'] 	   = 'Data Siswa';
-		$data['datasiswa'] = $this->Model_siswa->getalldata()->result();
+		$data['datasiswa'] = $this->Model_siswa->getalldata();
 
 		$this->load->view('admin/layout/header', $data);
 		$this->load->view('admin/layout/topbar', $data);
@@ -54,13 +54,14 @@ class Siswa extends CI_Controller {
 				'nama' 		    => $nama,
 				'tempat_lahir'  => $tempat_lahir,
 				'tanggal_lahir' => $tanggal_lahir,
+				'jenis_kelamin' => $jenis_kelamin,
 				'agama' 		=> $agama,
 				'alamat' 		=> $alamat,
 				'image' 		=> 'profile.jpg'
 			);
 
 			$this->Model_siswa->savedata($data, 'siswa');
-			$this->session->set_flashdata('flash', 'di tambah');
+			$this->session->set_flashdata('flash', 'di tambah!');
 			redirect('admin/siswa');
 		}
 	}
@@ -69,7 +70,7 @@ class Siswa extends CI_Controller {
 	{
 		$where = array('id_siswa' => $kode);
 		$this->Model_siswa->deletedata($where, 'siswa');
-		$this->session->set_flashdata('flash', 'di hapus');
+		$this->session->set_flashdata('flash', 'di hapus!');
 		redirect('admin/siswa');
 	}
 
@@ -77,6 +78,7 @@ class Siswa extends CI_Controller {
 	{
 		$data['title'] = 'Edit Data Siswa';
 		$where = array('id_siswa' => $kode);
+		$data['datasiswa'] = $this->Model_siswa->getby_id($where, 'siswa');
 
 		$this->load->view('admin/layout/header', $data);
 		$this->load->view('admin/layout/topbar', $data);
