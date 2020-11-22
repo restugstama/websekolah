@@ -7,10 +7,10 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="<?= base_url(); ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <img src="<?= base_url(); ?>assets/img/profile/<?= $user['image']; ?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p><?= $user['nama']; ?></p>
         <!-- Status -->
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
@@ -20,8 +20,7 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">Main</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+      <li class="active"><a href="<?= base_url(); ?>admin/dashboard"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
       <li class="header">Menu</li>
       <li class="treeview">
         <a href="#"><i class="fa fa-link"></i> <span>Master Data</span>
@@ -32,10 +31,12 @@
         <ul class="treeview-menu">
           <li><a href="<?= base_url(); ?>admin/siswa">Siswa</a></li>
           <li><a href="#">Guru</a></li>
+          <li><a href="#">Kelas</a></li>
+          <li><a href="#">Mata Pelajaran</a></li>
         </ul>
       </li>
       <li><a href="<?= base_url(); ?>admin/user"><i class="fa fa-link"></i> <span>Management User</span></a></li>
-      <li><a href="#"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+      <li><a href="<?= base_url(); ?>admin/login/logout_admin"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

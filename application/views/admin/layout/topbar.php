@@ -23,7 +23,7 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs"><b>Selamat Datang,</b> Alexander Pierce</span>
+              <span class="hidden-xs">Selamat Datang, <b><?= $user['nama']; ?></b></span>
             </a>
           </li>
         </ul>

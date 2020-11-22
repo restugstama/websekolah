@@ -13,8 +13,8 @@
          <thead>
           <tr>
             <th>No</th>
-            <th>Nama</th>
             <th>NISN</th>
+            <th>Nama</th>
             <th>Status</th>
             <th>Aksi</th>
           </tr>
@@ -26,8 +26,8 @@
           	?>
             <tr>
               <td><?= $no++ ?></td>
-              <td><?= $siswa['nama']; ?></td>
               <td><?= $siswa['nisn']; ?></td>
+              <td><?= $siswa['nama']; ?></td>
               <td></td>
               <td>
                 <a href="<?= base_url(); ?>admin/siswa/editsiswa/<?= $siswa['id_siswa']; ?>" class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></a>

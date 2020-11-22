@@ -5,11 +5,20 @@ class Siswa extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		if($this->session->userdata('username') != TRUE){
+			$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span></button>
+				Silahkan Login Terlebih Dahulu !</div>');
+			redirect('admin');
+		}
+
 		$this->load->model('Model_siswa');
 	}
 
 	public function index()
 	{
+		$data['user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
+
 		$data['title'] 	   = 'Data Siswa';
 		$data['datasiswa'] = $this->Model_siswa->getalldata();
 
@@ -22,6 +31,8 @@ class Siswa extends CI_Controller {
 
 	public function tambahsiswa()
 	{
+		$data['user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
+
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
@@ -51,17 +62,18 @@ class Siswa extends CI_Controller {
 
 			$data = array(
 				'nisn' 		    => $nisn,
-				'password' 	    => password_hash($tanggal_lahir, PASSWORD_DEFAULT),
 				'nama' 		    => $nama,
-				'tempat_lahir'  => $tempat_lahir,
-				'tanggal_lahir' => $tanggal_lahir,
 				'jenis_kelamin' => $jenis_kelamin,
 				'agama' 		=> $agama,
+				'tempat_lahir'  => $tempat_lahir,
+				'tanggal_lahir' => $tanggal_lahir,
 				'alamat' 		=> $alamat,
-				'image' 		=> 'profile.jpg'
+				'password' 	    => password_hash($tanggal_lahir, PASSWORD_DEFAULT),
+				'image' 		=> 'profile.jpg',
+				'id_role'		=> '3'
 			);
 
-			$this->Model_siswa->savedata($data, 'siswa');
+			$this->Model_siswa->savedata($data, 'tb_siswa');
 			$this->session->set_flashdata('flash', 'di tambah!');
 			redirect('admin/siswa');
 		}
@@ -77,6 +89,8 @@ class Siswa extends CI_Controller {
 
 	public function editsiswa($kode)
 	{
+		$data['user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array();
+		
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('nisn', 'NISN', 'required|trim');
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
@@ -126,11 +140,4 @@ class Siswa extends CI_Controller {
 			redirect('admin/siswa');
 		}
 	}
-
-	// public function updatesiswa()
-	// {
-
-	// }
-
-
 }

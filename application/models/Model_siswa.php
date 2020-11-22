@@ -5,28 +5,28 @@ class Model_siswa extends CI_Model
 {
 	public function getalldata()
 	{
-		return $this->db->get('siswa')->result_array();
+		return $this->db->get('tb_siswa')->result_array();
 	}
 
 	public function getby_id($where)
 	{
-		return $this->db->get_where('siswa', $where)->result_array();
+		return $this->db->get_where('tb_siswa', $where)->result_array();
 	}
 
 	public function savedata($data)
 	{
-		$this->db->insert('siswa', $data);
+		$this->db->insert('tb_siswa', $data);
 	}
 
 	public function deletedata($where)
 	{
 		$this->db->where($where);
-		$this->db->delete('siswa');
+		$this->db->delete('tb_siswa');
 	}
 
 	public function updatedata($where,$data)
 	{
 		$this->db->where($where);
-		$this->db->update('siswa', $data);
+		$this->db->update('tb_siswa', $data);
 	}
 }
