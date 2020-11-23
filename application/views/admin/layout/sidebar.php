@@ -32,7 +32,7 @@
           <li><a href="<?= base_url(); ?>admin/siswa">Siswa</a></li>
           <li><a href="#">Guru</a></li>
           <li><a href="#">Kelas</a></li>
-          <li><a href="#">Mata Pelajaran</a></li>
+          <li><a href="<?= base_url(); ?>admin/mata_pelajaran">Mata Pelajaran</a></li>
         </ul>
       </li>
       <li><a href="<?= base_url(); ?>admin/user"><i class="fa fa-link"></i> <span>Management User</span></a></li>

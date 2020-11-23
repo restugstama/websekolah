@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Siswa extends CI_Controller {
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -82,7 +83,7 @@ class Siswa extends CI_Controller {
 	public function hapussiswa($kode)
 	{
 		$where = array('id_siswa' => $kode);
-		$this->Model_siswa->deletedata($where, 'siswa');
+		$this->Model_siswa->deletedata($where, 'tb_siswa');
 		$this->session->set_flashdata('flash', 'di hapus!');
 		redirect('admin/siswa');
 	}
