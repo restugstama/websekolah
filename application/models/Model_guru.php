@@ -23,4 +23,10 @@ class Model_guru extends CI_Model
 		$this->db->where($where);
 		$this->db->delete('tb_guru');
 	}
+
+	public function updatedata($where,$data)
+	{
+		$this->db->where($where);
+		$this->db->update('tb_guru', $data);
+	}
 }
