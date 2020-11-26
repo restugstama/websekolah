@@ -30,8 +30,8 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="<?= base_url(); ?>admin/siswa">Siswa</a></li>
-          <li><a href="#">Guru</a></li>
-          <li><a href="#">Kelas</a></li>
+          <li><a href="<?= base_url(); ?>admin/guru">Guru</a></li>
+          <li><a href="<?= base_url(); ?>admin/kelas">Kelas</a></li>
           <li><a href="<?= base_url(); ?>admin/mata_pelajaran">Mata Pelajaran</a></li>
         </ul>
       </li>

@@ -14,7 +14,7 @@
               <!-- Start Form -->
               <form action="" method="post">
                 <div class="form-group">
-                  <input type="text" name="id_matapelajaran" id="id_matapelajaran" class="form-control" value="<?= $pelajaran['id_matapelajaran']; ?>">
+                  <input type="text" name="id_matapelajaran" id="id_matapelajaran" class="form-control" value="<?= $pelajaran['id_matapelajaran']; ?>" readonly>
                 </div>
                 <div class="form-group">
                   <label>Nama</label>
@@ -22,7 +22,7 @@
                   <?= form_error('mata_pelajaran', '<small class="text-danger">', '</small>') ?>
                 </div>
                 <button type="submit" class="btn btn-success">Submit</button>
-                <a href="<?= base_url(); ?>admin/siswa" class="btn btn-warning">Kembali</a>
+                <a href="<?= base_url(); ?>admin/mata_pelajaran" class="btn btn-warning">Kembali</a>
               </form>
               <!-- End Form -->
             <?php } ?>

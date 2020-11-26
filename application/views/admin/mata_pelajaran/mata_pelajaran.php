@@ -53,17 +53,17 @@
           <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">Tambah Mata Pelajaran</h4>
         </div>
-        <div class="modal-body">
-          <form action="<?= base_url(); ?>admin/mata_pelajaran/tambahmatapelajaran" method="post">
+        <form action="<?= base_url(); ?>admin/mata_pelajaran/tambahmatapelajaran" method="post">
+          <div class="modal-body">
             <div class="form-group">
               <label>Mata Pelajaran</label>
               <input type="text" class="form-control" name="mata_pelajaran" id="mata_pelajaran">
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Submit</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </div>
       <!-- /.modal-content -->
     </div>

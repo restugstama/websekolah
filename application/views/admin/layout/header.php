@@ -59,5 +59,5 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-collapse">
+<body class="hold-transition skin-blue fixed">
 <div class="wrapper">

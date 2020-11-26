@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 07:22 AM
+-- Generation Time: Nov 26, 2020 at 08:22 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -24,6 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_guru`
+--
+
+CREATE TABLE `tb_guru` (
+  `id_guru` int(11) NOT NULL,
+  `nip` varchar(16) NOT NULL,
+  `nama` varchar(128) NOT NULL,
+  `no_telp` varchar(16) NOT NULL,
+  `jenis_kelamin` varchar(16) NOT NULL,
+  `agama` varchar(16) NOT NULL,
+  `tempat_lahir` varchar(64) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `alamat` varchar(128) NOT NULL,
+  `status` varchar(16) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `image` varchar(128) NOT NULL,
+  `id_role` int(11) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_guru`
+--
+
+INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama`, `no_telp`, `jenis_kelamin`, `agama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `status`, `password`, `image`, `id_role`, `date_added`) VALUES
+(1, '2001001235', 'Restu Guru', '08123445690', 'Laki-Laki', 'Islam', 'Jakarta', '1926-01-12', 'jl cempaka wangi 345', 'Aktif', '$2y$10$.15vdFBNs3olaDD2F8v8IOJwJ2Bo3pBqHMuqAwX0DMfkYp23sJDz6', 'profile.jpg', 2, '2020-11-25 02:51:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_matapelajaran`
 --
 
@@ -37,7 +67,7 @@ CREATE TABLE `tb_matapelajaran` (
 --
 
 INSERT INTO `tb_matapelajaran` (`id_matapelajaran`, `mata_pelajaran`) VALUES
-(2, 'Bahasa Indonesia');
+(2, 'Bahasa Indonesia 2');
 
 -- --------------------------------------------------------
 
@@ -79,13 +109,6 @@ CREATE TABLE `tb_siswa` (
   `id_role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tb_siswa`
---
-
-INSERT INTO `tb_siswa` (`id_siswa`, `nisn`, `nama`, `jenis_kelamin`, `agama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `password`, `image`, `id_role`) VALUES
-(2, '1002000124', 'Restu Gusti Pratama', 'Laki-Laki', 'Islam', 'Jakarta', '2020-11-04', 'Kemayoran', '$2y$10$GFQRGp/qlsqv2H08q1xpRO2x3h7eRh6LMl5yD3cdAttVVM36U6XR2', 'profile.jpg', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -108,12 +131,17 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `image`, `date_added`, `id_role`) VALUES
 (5, 'Admin R', 'admin', '$2y$10$Isq98Ip5Iie4rFaOhUDEMufjr7uzrhNHR9JacQHa8PMMCmIRbzOLe', 'default.jpg', '2020-11-19', 1),
-(6, 'Restu Gusti Pratama', 'admin1', '$2y$10$YJpLOV2knOMAxQ228NJs7.B36ZFIuP7SUSxs0KjyThTslrxcTynfe', 'default.jpg', '2020-11-19', 1),
 (7, 'Restu Gusti Pratama', 'restugstama', '$2y$10$bTQ8r3V/jrsFV8h0msn4feRIIlEIvaXovDg1uXy.zv4O.g6e0N0t2', '', '2020-11-22', 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_guru`
+--
+ALTER TABLE `tb_guru`
+  ADD PRIMARY KEY (`id_guru`);
 
 --
 -- Indexes for table `tb_matapelajaran`
@@ -144,10 +172,16 @@ ALTER TABLE `tb_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tb_guru`
+--
+ALTER TABLE `tb_guru`
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tb_matapelajaran`
 --
 ALTER TABLE `tb_matapelajaran`
-  MODIFY `id_matapelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_matapelajaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_role`
