@@ -54,3 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['admin'] = 'admin/login';
+$route['siswa'] = 'siswa/login';
+$route['guru'] = 'guru/login';

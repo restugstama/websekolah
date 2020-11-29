@@ -1,0 +1,68 @@
+ @media screen and (max-width: 1200)
+{
+	.background
+	{
+		width: 40%;
+		border-radius: 190% 0 0 0;
+		transition: 0.5s;
+	}
+}
+
+@media screen and (max-width: 991px)
+{
+	.background
+	{
+		width: 80%;
+		border-radius: 140% 0 0% 0;
+		transition: 05s;
+	}
+	#sampul
+	{
+		display: none;
+	}
+	#form
+	{
+		left: 0;
+		margin: auto;
+	}
+
+	#sampul
+	{
+		display: block;
+		position: absolute;
+		bottom: 0;
+		max-width: 70%;
+		left: 45%;
+	}
+	#sampul img
+	{
+		display: block;
+	}
+	.cover 
+	{
+		z-index: 1;
+	}
+}
+
+@media screen and (max-width: 600px)
+{
+	.background
+	{
+		width: 100%;
+		border-radius: 0;
+		transition: 0.5s;
+	}
+	.cover
+	{
+		width: 350px;
+	}
+	#sampul
+	{
+		max-width: 70%;
+		left: 0;
+	}
+	#sampul img
+	{
+		width: 500px;
+	}
+}
