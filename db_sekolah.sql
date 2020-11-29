@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2020 at 08:22 AM
+-- Generation Time: Nov 29, 2020 at 07:52 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_sekolah`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_detail_kelas`
+--
+
+CREATE TABLE `tb_detail_kelas` (
+  `id_detail_kelas` int(11) NOT NULL,
+  `id_kelas` int(11) NOT NULL,
+  `id_siswa` int(11) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -49,7 +62,33 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama`, `no_telp`, `jenis_kelamin`, `agama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `status`, `password`, `image`, `id_role`, `date_added`) VALUES
-(1, '2001001235', 'Restu Guru', '08123445690', 'Laki-Laki', 'Islam', 'Jakarta', '1926-01-12', 'jl cempaka wangi 345', 'Aktif', '$2y$10$.15vdFBNs3olaDD2F8v8IOJwJ2Bo3pBqHMuqAwX0DMfkYp23sJDz6', 'profile.jpg', 2, '2020-11-25 02:51:38');
+(1, '2001001235', 'Restu Guru Pratama', '08123445690', 'Laki-Laki', 'Islam', 'Jakarta', '1926-01-12', 'jl cempaka wangi 345', 'Aktif', '$2y$10$.15vdFBNs3olaDD2F8v8IOJwJ2Bo3pBqHMuqAwX0DMfkYp23sJDz6', 'profile.jpg', 2, '2020-11-25 02:51:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_jurusan`
+--
+
+CREATE TABLE `tb_jurusan` (
+  `id_jurusan` int(11) NOT NULL,
+  `nama` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_kelas`
+--
+
+CREATE TABLE `tb_kelas` (
+  `id_kelas` int(11) NOT NULL,
+  `nama` varchar(64) NOT NULL,
+  `jurusan` int(32) NOT NULL,
+  `id_guru` int(11) NOT NULL,
+  `tahun_ajaran` varchar(16) NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -138,10 +177,28 @@ INSERT INTO `tb_user` (`id_user`, `nama`, `username`, `password`, `image`, `date
 --
 
 --
+-- Indexes for table `tb_detail_kelas`
+--
+ALTER TABLE `tb_detail_kelas`
+  ADD PRIMARY KEY (`id_detail_kelas`);
+
+--
 -- Indexes for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
   ADD PRIMARY KEY (`id_guru`);
+
+--
+-- Indexes for table `tb_jurusan`
+--
+ALTER TABLE `tb_jurusan`
+  ADD PRIMARY KEY (`id_jurusan`);
+
+--
+-- Indexes for table `tb_kelas`
+--
+ALTER TABLE `tb_kelas`
+  ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indexes for table `tb_matapelajaran`
@@ -172,10 +229,28 @@ ALTER TABLE `tb_user`
 --
 
 --
+-- AUTO_INCREMENT for table `tb_detail_kelas`
+--
+ALTER TABLE `tb_detail_kelas`
+  MODIFY `id_detail_kelas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
   MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_jurusan`
+--
+ALTER TABLE `tb_jurusan`
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_kelas`
+--
+ALTER TABLE `tb_kelas`
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tb_matapelajaran`
