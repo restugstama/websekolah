@@ -70,7 +70,7 @@ class Siswa extends CI_Controller {
 				'tanggal_lahir' => $tanggal_lahir,
 				'alamat' 		=> $alamat,
 				'password' 	    => password_hash($tanggal_lahir, PASSWORD_DEFAULT),
-				'image' 		=> 'profile.jpg',
+				'image' 		=> 'default.jpg',
 				'id_role'		=> '3'
 			);
 

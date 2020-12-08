@@ -5,9 +5,6 @@ class Login extends CI_Controller {
 
 public function index()
 {
-
-
-
 	$this->form_validation->set_rules('nisn','NISN','required|trim',
 	['required' => 'NISN tidak boleh kosong']);
 
@@ -17,6 +14,7 @@ public function index()
 	if($this->form_validation->run() == false)
 	{
 		$data['title'] = 'Login Siswa';
+		
 		$this->load->view('siswa/login',$data);
 	}else{
 		$this->_login();
@@ -39,14 +37,14 @@ private function _login()
 				'id_role' => $user['id_role']
 			];
 			$this->session->set_userdata($data);
-			redirect('siswa/dasboard');
+			redirect('siswa/dashboard');
 		}else{
 			$this->session->set_flashdata('login', 
 				'<div class="alert alert-danger alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span>
 					</button>
 					Password Salah</div>');
-			redirect('siswa');
+			redirect('');
 		}
 	}else{
 		$this->session->set_flashdata('login', 
@@ -54,18 +52,18 @@ private function _login()
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span>
 				</button>
 				Username Tidak Ada</div>');
-		redirect('siswa');
+		redirect('');
 	}
 }
 
 public function logout()
 {
-	$this->session->unset_userdata('username');
+	$this->session->unset_userdata('nisn');
 	$this->session->unset_userdata('id_role');
 
 	$this->session->set_flashdata('login', '<div class="alert alert-success alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span></button>
 			Logout Berhasil</div>');
-	redirect('siswa');
+	redirect('');
 }
 } 

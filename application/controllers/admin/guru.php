@@ -66,7 +66,7 @@ class Guru extends CI_Controller
 				'alamat' 		=> $alamat,
 				'status' 		=> 'Aktif',
 				'password' 	    => password_hash($tanggal_lahir, PASSWORD_DEFAULT),
-				'image' 		=> 'profile.jpg',
+				'image' 		=> 'default.jpg',
 				'id_role'		=> '2',
 				'date_added'    => date('Y-m-d H:i:s')
 			);

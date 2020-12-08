@@ -57,7 +57,7 @@ private function _login()
 
 public function logout()
 {
-	$this->session->unset_userdata('username');
+	$this->session->unset_userdata('nip');
 	$this->session->unset_userdata('id_role');
 
 	$this->session->set_flashdata('login', '<div class="alert alert-success alert-dismissible" role="alert">
