@@ -41,10 +41,11 @@ private function _login()
 		}else{
 			$this->session->set_flashdata('login', 
 				'<div class="alert alert-danger alert-dismissible" role="alert">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<spanaria-hidden="true">&times;</span>
 					</button>
 					Password Salah</div>');
-			redirect('');
+			redirect('login');
 		}
 	}else{
 		$this->session->set_flashdata('login', 
@@ -52,7 +53,7 @@ private function _login()
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span>
 				</button>
 				Username Tidak Ada</div>');
-		redirect('');
+		redirect('login');
 	}
 }
 
