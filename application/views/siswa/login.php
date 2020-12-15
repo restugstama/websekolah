@@ -8,8 +8,14 @@
 	<meta name="author" content="">
 	<title>Login Siswa</title>
 	<!-- Sauce css -->
+<<<<<<< Updated upstream
 	<link rel="stylesheet" href="<?= base_url(''); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+=======
+	<link rel="stylesheet" href="<?= base_url('');?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	
+>>>>>>> Stashed changes
 	<link rel="stylesheet" href="<?= base_url(''); ?>assets/css/style.css">
+
 	<link rel="stylesheet" href="<?= base_url('');?>assets/css/responsive.css">
 	<!-- End Sauce CSS -->
 	<!-- Font -->
@@ -35,6 +41,7 @@
 				<div class="cover">
 					<h3 class="signin-text mb-3">Sign In</h3>
 
+<<<<<<< Updated upstream
 					<?= $this->session->flashdata('login'); ?>
 					<form method="post" action="<?= base_url(''); ?>">
 						<!-- Email -->
@@ -55,6 +62,27 @@
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
+=======
+				<?= $this->session->flashdata('login'); ?>
+				<form method="post" action="<?= base_url('siswa/Login'); ?>">
+					<!-- Email -->
+				  <div class="form-group">
+				    <label for="exampleInputEmail1"></label>
+				    <input type="text" name="nisn" class="form-control" id="nisn" placeholder="NISN" value="<?= set_value('nisn'); ?>">
+				    <?= form_error('nisn', '<small class="text-danger">', '</small>') ?>
+				  </div>
+				  <!-- End Email -->
+ 
+				  <!-- Password -->
+				  <div class="form-group">
+				    <label for="exampleInputPassword1"></label>
+				    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+				    <?= form_error('password', '<small class="text-danger">', '</small>') ?>
+				  </div>
+				  <!-- End Password -->
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+>>>>>>> Stashed changes
 			</div>
 			<!-- End Form Login Siswa -->
 			<!-- Sampul -->

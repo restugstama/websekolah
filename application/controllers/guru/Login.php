@@ -61,7 +61,8 @@ public function logout()
 	$this->session->unset_userdata('id_role');
 
 	$this->session->set_flashdata('login', '<div class="alert alert-success alert-dismissible" role="alert">
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span></button>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><spanaria-hidden="true">&times;</span
+			</button>
 			Logout Berhasil</div>');
 	redirect('guru');
 }
