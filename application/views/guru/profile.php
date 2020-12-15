@@ -11,16 +11,21 @@
           </div>
           <div class="box-body">
             <!-- Start Form -->
-            <form action="<?= base_url(); ?>siswa/profile" method="post">
+            <form action="<?= base_url(); ?>guru/profile" method="post">
               <div class="form-group">
                 <label>NISN</label>
-                <input type="text" name="nisn" id="nisn" class="form-control" value="<?= $user['nisn']; ?>" readonly>
-                <?= form_error('nisn', '<small class="text-danger">', '</small>') ?>
+                <input type="text" name="nip" id="nip" class="form-control" value="<?= $user['nip']; ?>" readonly>
+                <?= form_error('nip', '<small class="text-danger">', '</small>') ?>
               </div>
               <div class="form-group">
                 <label>Nama</label>
                 <input type="text" name="nama" id="nama" class="form-control" value="<?= $user['nama']; ?>">
                 <?= form_error('nama', '<small class="text-danger">', '</small>') ?>
+              </div>
+              <div class="form-group">
+                <label>No Telp</label>
+                <input type="text" name="telepon" id="telepon" class="form-control" value="<?= $user['no_telp']; ?>">
+                <?= form_error('telepon', '<small class="text-danger">', '</small>') ?>
               </div>
               <div class="row">
                 <div class="form-group col-md-6">
