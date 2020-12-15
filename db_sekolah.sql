@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2020 at 04:58 AM
+-- Generation Time: Dec 15, 2020 at 10:40 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -69,7 +69,56 @@ CREATE TABLE `tb_guru` (
 --
 
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama`, `no_telp`, `jenis_kelamin`, `agama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `status`, `password`, `image`, `id_role`, `date_added`) VALUES
-(1, '2001001235', 'Restu Guru Pratama', '08123445690', 'Laki-Laki', 'Islam', 'Jakarta', '1926-01-12', 'jl cempaka wangi 345', 'Aktif', '$2y$10$.15vdFBNs3olaDD2F8v8IOJwJ2Bo3pBqHMuqAwX0DMfkYp23sJDz6', 'profile.jpg', 2, '2020-11-25 02:51:38');
+(1, '2001001235', 'Restu Guru Pratama', '08123445690', 'Laki-Laki', 'Islam', 'Jakarta', '1926-01-12', 'jl cempaka wangi 345', 'Aktif', '$2y$10$.15vdFBNs3olaDD2F8v8IOJwJ2Bo3pBqHMuqAwX0DMfkYp23sJDz6', 'profile.jpg', 2, '2020-11-25 02:51:38'),
+(4, '123123123', 'Tama', '021', 'Perempuan', 'Islam', 'Jakarta', '2020-12-10', 'Jl. Cempaka Wangi 3', 'Aktif', '$2y$10$O5rgoOS1iivdCU1wph.Wce1Zdw3.vskvhtN0sckFZMscMIL0vw/vi', 'default.jpg', 2, '2020-12-15 06:08:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_hari`
+--
+
+CREATE TABLE `tb_hari` (
+  `id_hari` int(11) NOT NULL,
+  `hari` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_hari`
+--
+
+INSERT INTO `tb_hari` (`id_hari`, `hari`) VALUES
+(1, 'Senen'),
+(2, 'Selasa'),
+(3, 'Rabu'),
+(4, 'Kamis'),
+(5, 'Jumat'),
+(6, 'Sabtu'),
+(7, 'Minggu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_jadwal`
+--
+
+CREATE TABLE `tb_jadwal` (
+  `id_jadwal` int(11) NOT NULL,
+  `id_hari` int(11) NOT NULL,
+  `id_matapelajaran` int(11) NOT NULL,
+  `jam_mulai` text NOT NULL,
+  `jam_berakhir` text NOT NULL,
+  `id_guru` int(11) NOT NULL,
+  `id_kelas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_jadwal`
+--
+
+INSERT INTO `tb_jadwal` (`id_jadwal`, `id_hari`, `id_matapelajaran`, `jam_mulai`, `jam_berakhir`, `id_guru`, `id_kelas`) VALUES
+(1, 1, 2, '08:00', '09:00', 4, 3),
+(3, 1, 2, '06:30', '09:00', 4, 4);
 
 -- --------------------------------------------------------
 
@@ -102,7 +151,8 @@ CREATE TABLE `tb_kelas` (
 --
 
 INSERT INTO `tb_kelas` (`id_kelas`, `nama_kelas`, `jurusan`, `id_guru`, `tahun_ajaran`, `date_added`) VALUES
-(3, '10 - B', 'Ilmu Pengetahuan Sosial', 1, '2020 - 2021', '2020-12-14 16:29:23');
+(3, '10 - B', 'Ilmu Pengetahuan Sosial', 1, '2020 - 2021', '2020-12-14 16:29:23'),
+(4, '10 - A', 'Ilmu Pengetahuan Alam', 1, '2020 - 2021', '2020-12-15 05:10:35');
 
 -- --------------------------------------------------------
 
@@ -167,7 +217,7 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`id_siswa`, `nisn`, `nama`, `jenis_kelamin`, `agama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `password`, `image`, `id_role`) VALUES
-(5, '123123123', 'restu', 'Laki-Laki', 'Islam', 'Jakarta', '2020-12-17', 'Jl. Cempaka Wangi 3', '$2y$10$AxW1YACT1ow..fxXQ9vAM.ilMAzyxY5XwNkVt2pEMU31S/SATR.K6', 'default.jpg', 3);
+(5, '123123123', 'Restu Gusti Pratama', 'Laki-Laki', '', 'Jakarta', '2020-12-17', 'Jl. Cempaka Wangi', '$2y$10$AxW1YACT1ow..fxXQ9vAM.ilMAzyxY5XwNkVt2pEMU31S/SATR.K6', 'default.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -208,6 +258,18 @@ ALTER TABLE `tb_detail_kelas`
 --
 ALTER TABLE `tb_guru`
   ADD PRIMARY KEY (`id_guru`);
+
+--
+-- Indexes for table `tb_hari`
+--
+ALTER TABLE `tb_hari`
+  ADD PRIMARY KEY (`id_hari`);
+
+--
+-- Indexes for table `tb_jadwal`
+--
+ALTER TABLE `tb_jadwal`
+  ADD PRIMARY KEY (`id_jadwal`);
 
 --
 -- Indexes for table `tb_jurusan`
@@ -253,13 +315,25 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_kelas`
 --
 ALTER TABLE `tb_detail_kelas`
-  MODIFY `id_detail_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_detail_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tb_hari`
+--
+ALTER TABLE `tb_hari`
+  MODIFY `id_hari` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tb_jadwal`
+--
+ALTER TABLE `tb_jadwal`
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_jurusan`
@@ -271,7 +345,7 @@ ALTER TABLE `tb_jurusan`
 -- AUTO_INCREMENT for table `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_matapelajaran`

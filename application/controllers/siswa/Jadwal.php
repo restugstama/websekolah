@@ -17,12 +17,11 @@ class Jadwal extends CI_Controller {
 	public function index()
 	{
 		$data['user'] = $this->db->get_where('tb_siswa', ['nisn' => $this->session->userdata('nisn')])->row_array();
-		$id = $data['user']['id_siswa'];
-		$where = array('tb_detail_kelas.id_siswa' => $id);
-		$id['kelas'] = $this->Model_detailkelas->getby_id($where);
-		$id_kelas = id['kelas']['']
-		// $where_id = array('tb_jadwal.id_kelas' => );
-		// $data['datajadwal']  = $this->Model_jadwal->getjadwalsiswaby_id($where_id);
+		$data['detailkelas'] = $this->db->get_where('tb_detail_kelas', ['id_siswa' => $data['user']['id_siswa']])->row_array();
+		$id = $data['detailkelas']['id_kelas'];
+		$where = array('tb_jadwal.id_kelas' => $id);
+		$data['datajadwal']  = $this->Model_jadwal->getjadwalby_id($where);
+		
 
 		$data['title'] = 'Jadwal Siswa';
 

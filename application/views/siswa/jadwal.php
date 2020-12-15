@@ -20,6 +20,14 @@
           </tr>
         </thead>
         <tbody>
+          <?php foreach($datajadwal as $jadwal) : ?>
+            <tr>
+              <td><?= $jadwal['hari']; ?></td>
+              <td><?= $jadwal['jam_mulai']; ?> - <?= $jadwal['jam_berakhir']; ?></td>
+              <td><?= $jadwal['mata_pelajaran']; ?></td>
+              <td><?= $jadwal['nama']; ?></td>
+            </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
