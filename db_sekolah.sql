@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 07:52 AM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Dec 15, 2020 at 04:58 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,6 +33,13 @@ CREATE TABLE `tb_detail_kelas` (
   `id_siswa` int(11) NOT NULL,
   `date_added` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_detail_kelas`
+--
+
+INSERT INTO `tb_detail_kelas` (`id_detail_kelas`, `id_kelas`, `id_siswa`, `date_added`) VALUES
+(2, 3, 5, '2020-12-14 16:29:51');
 
 -- --------------------------------------------------------
 
@@ -83,12 +90,19 @@ CREATE TABLE `tb_jurusan` (
 
 CREATE TABLE `tb_kelas` (
   `id_kelas` int(11) NOT NULL,
-  `nama` varchar(64) NOT NULL,
-  `jurusan` int(32) NOT NULL,
+  `nama_kelas` varchar(64) NOT NULL,
+  `jurusan` varchar(32) NOT NULL,
   `id_guru` int(11) NOT NULL,
   `tahun_ajaran` varchar(16) NOT NULL,
   `date_added` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_kelas`
+--
+
+INSERT INTO `tb_kelas` (`id_kelas`, `nama_kelas`, `jurusan`, `id_guru`, `tahun_ajaran`, `date_added`) VALUES
+(3, '10 - B', 'Ilmu Pengetahuan Sosial', 1, '2020 - 2021', '2020-12-14 16:29:23');
 
 -- --------------------------------------------------------
 
@@ -147,6 +161,13 @@ CREATE TABLE `tb_siswa` (
   `image` varchar(128) NOT NULL,
   `id_role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_siswa`
+--
+
+INSERT INTO `tb_siswa` (`id_siswa`, `nisn`, `nama`, `jenis_kelamin`, `agama`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `password`, `image`, `id_role`) VALUES
+(5, '123123123', 'restu', 'Laki-Laki', 'Islam', 'Jakarta', '2020-12-17', 'Jl. Cempaka Wangi 3', '$2y$10$AxW1YACT1ow..fxXQ9vAM.ilMAzyxY5XwNkVt2pEMU31S/SATR.K6', 'default.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -232,7 +253,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_detail_kelas`
 --
 ALTER TABLE `tb_detail_kelas`
-  MODIFY `id_detail_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_guru`
@@ -250,7 +271,7 @@ ALTER TABLE `tb_jurusan`
 -- AUTO_INCREMENT for table `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_matapelajaran`
@@ -268,7 +289,7 @@ ALTER TABLE `tb_role`
 -- AUTO_INCREMENT for table `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_user`

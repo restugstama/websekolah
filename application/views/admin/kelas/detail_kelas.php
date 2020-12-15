@@ -9,7 +9,7 @@
           <div class="box-header with-border">
             <h3 class="box-title">Detail Kelas</h3>
           </div>
-          <div class="box-body">
+          <div class="box-body"> 
             <!-- Start Form -->
             <form action="" method="post">
               <?php foreach($datakelas as $kelas) { ?>

@@ -53,5 +53,6 @@ $route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['siswa'] = 'siswa/dashboard';
 $route['admin'] = 'admin/login';
 $route['guru'] = 'guru/login';
