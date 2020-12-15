@@ -8,15 +8,18 @@
 	<meta name="author" content="">
 	<title>Login Siswa</title>
 	<!-- Sauce css -->
-	<link rel="stylesheet" href="<?= base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url(''); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url(''); ?>assets/css/style.css">
 	<link rel="stylesheet" href="<?= base_url('');?>assets/css/responsive.css">
+	<!-- End Sauce CSS -->
 	<!-- Font -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Oswald&family=Signika&display=swap" rel="stylesheet">
-	<!-- Font -->
-	<!-- End Sauce CSS -->
-	<!-- Sauce JS --> 
+	<!-- End Font -->
+
+	<!-- Admin LTE -->
+	   <!-- <link rel="stylesheet" href="<?= base_url(); ?>assets/dist/css/AdminLTE.min.css"> -->
+	<!-- End Admin LTE -->
 </head>
 <body> 
 	<div class="container" id="container">
@@ -64,7 +67,7 @@
 	</div>
 
 	<!-- Bootstrap 3.3.7 -->
-	<script src="<?= base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="<?= base_url(''); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
