@@ -57,7 +57,7 @@ class Kelas extends CI_Controller {
 			$tahun_ajaran = $this->input->post('tahun_ajaran');
 
 			$data = array(
-				'nama_kelas' 		   => $nama_kelas,
+				'nama_kelas'   => $nama_kelas,
 				'jurusan'	   => $jurusan,
 				'id_guru' 	   => $wali_kelas,
 				'tahun_ajaran' => $tahun_ajaran,
