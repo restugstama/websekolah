@@ -20,11 +20,11 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">Main</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="<?= base_url(); ?>admin/dashboard"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-      <li><a href="<?= base_url(); ?>siswa/profile"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+      <li class="active"><a href="<?= base_url(); ?>guru/dashboard"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+      <li><a href="<?= base_url(); ?>guru/profile"><i class="fa fa-user"></i> <span>Profile</span></a></li>
       <li class="header">Menu</li>
-      <li><a href="<?= base_url(); ?>admin/jadwal"><i class="fa fa-home"></i> <span>Kelas</span></a></li>
-      <li><a href="<?= base_url(); ?>admin/user"><i class="fa fa-calendar"></i> <span>Jadwal</span></a></li>
+      <li><a href="<?= base_url(); ?>guru/kelas"><i class="fa fa-home"></i> <span>Kelas</span></a></li>
+      <li><a href="<?= base_url(); ?>guru/jadwal"><i class="fa fa-calendar"></i> <span>Jadwal</span></a></li>
       <li><a href="<?= base_url(); ?>guru/login/logout"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->

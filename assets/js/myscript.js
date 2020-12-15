@@ -2,7 +2,7 @@ const flashData = $('.flash-data').data('flashdata');
 
 if (flashData) {
 	Swal.fire({
-		icon: 'warning',
+		icon: 'success',
 		title: 'Success!',
 		text: 'Data berhasil ' + flashData,
 		type: 'success'
