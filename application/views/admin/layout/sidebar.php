@@ -31,10 +31,11 @@
         <ul class="treeview-menu">
           <li><a href="<?= base_url(); ?>admin/siswa">Siswa</a></li>
           <li><a href="<?= base_url(); ?>admin/guru">Guru</a></li>
-          <li><a href="<?= base_url(); ?>admin/kelas">Kelas</a></li>
           <li><a href="<?= base_url(); ?>admin/mata_pelajaran">Mata Pelajaran</a></li>
+          <li><a href="<?= base_url(); ?>admin/hari">Hari</a></li>
         </ul>
       </li>
+      <li><a href="<?= base_url(); ?>admin/kelas"><i class="fa fa-book"></i> <span>Kelas</span></a></li>
       <li><a href="<?= base_url(); ?>admin/jadwal"><i class="fa fa-calendar"></i> <span>Jadwal</span></a></li>
       <li><a href="<?= base_url(); ?>admin/user"><i class="fa fa-link"></i> <span>Management User</span></a></li>
       <li><a href="<?= base_url(); ?>admin/login/logout_admin"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>

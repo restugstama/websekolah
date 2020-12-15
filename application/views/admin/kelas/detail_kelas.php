@@ -32,7 +32,7 @@
                   <select name="wali_kelas" class="form-control">
                     <option disabled selected>Pilih Wali Kelas</option>
                     <?php foreach ($dataguru as $guru) : ?>
-                      <option value="<?= $guru['id_guru']; ?>" <?php if($guru['nama'] == true){ echo 'selected';} ?>><?= $guru['nama']; ?></option>
+                      <option value="<?= $guru['id_guru']; ?>" <?php if($kelas['id_guru'] == $guru['id_guru']){echo 'selected';} ?>><?= $guru['nama']; ?></option>
                     <?php endforeach; ?>
                   </select>
                   <?= form_error('wali_kelas', '<small class="text-danger">', '</small>') ?>

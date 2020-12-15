@@ -34,6 +34,8 @@
 <script src="<?= base_url(); ?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="<?= base_url(); ?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- bootstrap time picker -->
+<script src="<?= base_url(); ?>assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
 
 <script src="<?= base_url(); ?>assets/js/myscript.js"></script>
 <!-- page script -->
@@ -58,6 +60,10 @@
 
     //Initialize Select2 Elements
     $('.select2').select2();
+    //Timepicker
+    $('.timepicker').timepicker({
+      showInputs: true
+    })
   })
 </script>
 

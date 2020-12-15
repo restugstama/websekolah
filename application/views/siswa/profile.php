@@ -1,5 +1,6 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+  <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
   <!-- Main content -->
   <section class="content">
     <div class="row">
@@ -10,7 +11,7 @@
           </div>
           <div class="box-body">
             <!-- Start Form -->
-            <form action="<?= base_url().'admin/kelas/tambahkelas' ?>" method="post">
+            <form action="<?= base_url(); ?>siswa/profile" method="post">
               <div class="form-group">
                 <label>NISN</label>
                 <input type="text" name="nisn" id="nisn" class="form-control" value="<?= $user['nisn']; ?>" readonly>

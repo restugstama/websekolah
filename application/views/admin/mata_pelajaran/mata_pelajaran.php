@@ -16,9 +16,9 @@
           <table id="example2" class="table table-boredered">
             <thead>
               <tr>
-                <td>No</td>
-                <td>Mata Pelajaran</td>
-                <td>Aksi</td>
+                <th>No</th>
+                <th>Mata Pelajaran</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
